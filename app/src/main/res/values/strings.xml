@@ -14,9 +14,17 @@
     <string name="action_test">test</string>
     <string name="empty_string" />
 
-    <string name="Fragment1">This is Fragment 1</string>
-    <string name="Fragment2">This is Fragment 2</string>
-    <string name="Fragment3">This is Fragment 3</string>
+    <string name="Fragment1">This is Recommented</string>
+    <string name="Fragment2">This is Eat out</string>
+    <string name="Fragment3">This is Arts n Culture</string>
+
+    <string name="autocomplete_hint">Enter place name or address</string>
+    <string name="selected_place">Last Selected Place:</string>
+    <string name="clear_text">Clear Text</string>
+
+    <!-- getString(String, Object...) does not support HTML tags directly, they need to be encoded first.
+    Original string: <b>%1$s</b><br/><i>Place Id: %2$s</i><br/>Address: %3$s<br/>Phone: %4$s<br/>Website: %5$s-->
+    <string name="place_details">&lt;b&gt;%1$s&lt;/b&gt;&lt;br/&gt;&lt;i&gt;Place Id: %2$s&lt;/i&gt;&lt;br/&gt;Address: %3$s&lt;br/&gt;Phone: %4$s&lt;br/&gt;Website: %5$s</string>
 
 
     <!-- navigation drawer item labels-->
