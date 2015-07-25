@@ -6,4 +6,18 @@
         android:icon="@drawable/ic_action_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always" />
+
+    <item android:id="@+id/action_filter" android:title="@string/action_filter"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_filter_old"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/action_test" android:title="@string/action_test"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_test_two" android:title="@string/action_test"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
 </menu>
