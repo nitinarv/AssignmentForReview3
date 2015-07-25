@@ -27,7 +27,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 
-import com.placepicker.google.playservices.placepicker.R;
+import session.hackevent.mygola.com.mygola.R;
+
 
 /**
  * A Fragment that handles a stream of cards.

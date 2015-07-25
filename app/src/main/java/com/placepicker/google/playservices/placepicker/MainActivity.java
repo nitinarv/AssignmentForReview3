@@ -27,6 +27,8 @@ import com.placepicker.google.playservices.placepicker.cardstream.CardStreamStat
 import com.placepicker.google.playservices.placepicker.cardstream.OnCardClickListener;
 import com.placepicker.google.playservices.placepicker.cardstream.StreamRetentionFragment;
 
+import session.hackevent.mygola.com.mygola.R;
+
 public class MainActivity extends SampleActivityBase implements CardStream {
     public static final String TAG = "MainActivity";
     public static final String FRAGTAG = "PlacePickerFragment";

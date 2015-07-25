@@ -35,6 +35,8 @@ import com.placepicker.google.playservices.placepicker.cardstream.CardStream;
 import com.placepicker.google.playservices.placepicker.cardstream.CardStreamFragment;
 import com.placepicker.google.playservices.placepicker.cardstream.OnCardClickListener;
 
+import session.hackevent.mygola.com.mygola.R;
+
 /**
  * Sample demonstrating the use of {@link PlacePicker}.
  * This sample shows the construction of an {@link Intent} to open the PlacePicker from the
@@ -212,7 +214,7 @@ public class PlacePickerFragment extends Fragment implements OnCardClickListener
         // Add and show introduction card.
         c = new Card.Builder(this, CARD_INTRO)
                 .setTitle(getString(R.string.intro_title))
-                .setDescription(getString(R.string.intro_message))
+                .setDescription(getString(R.string.intro_message_picker))
                 .build(getActivity());
         getCardStream().addCard(c, true);
     }

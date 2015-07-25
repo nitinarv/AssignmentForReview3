@@ -35,9 +35,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.placepicker.android.common.logger.Log;
-import com.placepicker.google.playservices.placepicker.R;
+
 
 import java.util.ArrayList;
+
+import session.hackevent.mygola.com.mygola.R;
 
 /**
  * A Layout that contains a stream of card views.

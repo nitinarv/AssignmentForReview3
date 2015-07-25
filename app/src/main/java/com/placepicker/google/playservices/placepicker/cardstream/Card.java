@@ -28,9 +28,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.placepicker.google.playservices.placepicker.R;
 
 import java.util.ArrayList;
+
+import session.hackevent.mygola.com.mygola.R;
 
 /**
  * A Card contains a description and has a visual state. Optionally a card also contains a title,
