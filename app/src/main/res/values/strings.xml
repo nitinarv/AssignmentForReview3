@@ -3,4 +3,19 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
+    <string name="about_me">Made By Nitinraj Arvind</string>
+    <string name="action_search">Search for word value</string>
+
+    <!-- navigation drawer item labels-->
+    <string-array name="nav_drawer_labels">
+        <item>Restaurants</item>
+        <item>Suggestions</item>
+        <item>Corrections</item>
+
+    </string-array>
 </resources>
