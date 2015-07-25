@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
         mToolbar.setLogo(R.mipmap.ic_launcher);
 
     }
