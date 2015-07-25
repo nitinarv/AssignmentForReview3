@@ -1,4 +1,4 @@
-package session.hackevent.mygola.com.mygola;
+package session.hackevent.mygola.com.mygola.view.mainscreen;
 
 import android.content.Context;
 import android.database.Cursor;

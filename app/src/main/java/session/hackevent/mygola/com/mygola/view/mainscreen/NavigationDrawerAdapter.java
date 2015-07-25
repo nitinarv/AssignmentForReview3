@@ -1,4 +1,4 @@
-package session.hackevent.mygola.com.mygola;
+package session.hackevent.mygola.com.mygola.view.mainscreen;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
+
+import session.hackevent.mygola.com.mygola.R;
 
 
 /**

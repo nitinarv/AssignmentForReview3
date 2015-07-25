@@ -12,12 +12,4 @@
         android:icon="@drawable/ic_action_filter_old"
         app:showAsAction="always" />
 
-    <item android:id="@+id/action_test" android:title="@string/action_test"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
-
-    <item android:id="@+id/action_test_two" android:title="@string/action_test"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
-
 </menu>

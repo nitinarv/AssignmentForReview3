@@ -1,10 +1,12 @@
-package session.hackevent.mygola.com.mygola;
+package session.hackevent.mygola.com.mygola.uilibs;
 
 import android.app.SearchManager;
 import android.app.SearchableInfo;
+import android.content.ComponentName;
 import android.content.Context;
-import android.graphics.Rect;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,7 +17,12 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+
+import java.util.List;
+
+import session.hackevent.mygola.com.mygola.view.mainscreen.ExampleAdapter;
+import session.hackevent.mygola.com.mygola.view.mainscreen.FragmentDrawer;
+import session.hackevent.mygola.com.mygola.R;
 
 /**
  * Created by nitinraj.arvind on 7/25/2015.
@@ -75,14 +82,63 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void clearBaseTitle(final Toolbar toolbar){
+        setBaseTitle(toolbar, getResources().getString(R.string.empty_string));
+    }
+
+    private void setBaseTitle(final Toolbar toolbar, final String title){
         toolbar.post(new Runnable() {
             @Override
             public void run() {
-                toolbar.setTitle(R.string.empty_string);
+                toolbar.setTitle(title);
             }
         });
-
     }
+
+    /**Pick from label in activity tag*/
+    protected void setTitle(Context context, Class gClass){
+        setTitle(context, gClass, null);
+    }
+
+    /**Pick title given from a fragment*/
+    protected void setTitle(String title){
+        setTitle(null, null, title);
+    }
+
+    protected int backStackCount(){
+        List<Fragment> allFrags = getSupportFragmentManager().getFragments();
+        int fragIndex = (allFrags==null)?(0):(getSupportFragmentManager().getBackStackEntryCount());
+        return fragIndex;
+    }
+
+
+    /**
+     * We have to include the toolbar and then we have to
+     * set the title usign the pcakage manager, for being used by fragments
+     * */
+    protected void setTitle(Context context, Class gClass, String mTitle){
+        if(getActionBarToolbar()!=null){
+            String value = "-NA-";
+            if(mTitle==null) {
+                if(context!=null && gClass!=null) {
+                    PackageManager pm = getPackageManager();
+                    ComponentName componentName = new ComponentName(context, gClass);
+
+                    try {
+                        if (pm.getActivityInfo(componentName, 0).labelRes != 0) {
+                            value = context.getResources().getString(pm.getActivityInfo(componentName, 0).labelRes);
+                        }
+                    } catch (PackageManager.NameNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else{
+                value = mTitle;
+            }
+
+            setBaseTitle(getActionBarToolbar(), value);
+        }
+    }
+
 
 
     protected DrawerLayout getDrawerLayout(){

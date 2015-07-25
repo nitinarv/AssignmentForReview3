@@ -1,4 +1,4 @@
-package session.hackevent.mygola.com.mygola;
+package session.hackevent.mygola.com.mygola.view.mainscreen;
 
 /**
  * Created by nitinraj.arvind on 7/6/2015.

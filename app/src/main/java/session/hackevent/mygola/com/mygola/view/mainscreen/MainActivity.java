@@ -1,27 +1,23 @@
-package session.hackevent.mygola.com.mygola;
+package session.hackevent.mygola.com.mygola.view.mainscreen;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
-import android.content.Context;
-import android.database.MatrixCursor;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import java.util.ArrayList;
+import session.hackevent.mygola.com.mygola.R;
+import session.hackevent.mygola.com.mygola.uilibs.BaseActivity;
+import session.hackevent.mygola.com.mygola.uilibs.FragmentGeneralCallback;
 
 
-public class MainActivity extends BaseActivity implements FragmentDrawer.FragmentDrawerListener{
+public class MainActivity extends BaseActivity implements FragmentDrawer.FragmentDrawerListener, FragmentGeneralCallback {
 
 
     private MenuItem mSearchAction;
@@ -42,13 +38,19 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mFragmentDrawer = (FragmentDrawer) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         mFragmentDrawer.setUp(R.id.fragment_navigation_drawer, getDrawerLayout(), getActionBarToolbar());
         mFragmentDrawer.setDrawerListener(this);
 
-        setSupportActionBar(getActionBarToolbar());
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Pick one...");
+
+
+        // Locate the viewpager in activity_main.xml
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+
+        // Set the ViewPagerAdapter into ViewPager
+        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+
 
     }
 
@@ -99,12 +101,6 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         int id = item.getItemId();
 
         switch(item.getItemId()){
-            case R.id.action_test:
-                setDrawerToBackButton();
-                break;
-            case R.id.action_test_two:
-                setDrawerToMenuButton();
-                break;
             case R.id.action_search:
 
                 return true;
@@ -121,5 +117,20 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
     @Override
     public void onDrawerItemSelected(View view, int position) {
 //        displayView(position);
+    }
+
+    @Override
+    public void onResumeSetTitle(String title) {
+
+    }
+
+    @Override
+    public void onFragmentActive() {
+
+    }
+
+    @Override
+    public void onItemSelected() {
+
     }
 }

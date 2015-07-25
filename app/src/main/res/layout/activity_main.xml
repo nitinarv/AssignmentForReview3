@@ -8,32 +8,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <include
             android:id="@+id/toolbar"
             layout="@layout/toolbar" />
 
-        <ScrollView
-            android:id="@+id/content_scrollview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-
-            <FrameLayout
-                android:id="@+id/framelayout"
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content" >
 
-            </FrameLayout>
-        </ScrollView>
+                <android.support.v4.view.PagerTabStrip
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#000000" />
+
+            </android.support.v4.view.ViewPager>
 
     </LinearLayout>
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="session.hackevent.mygola.com.mygola.FragmentDrawer"
+        android:name="session.hackevent.mygola.com.mygola.view.mainscreen.FragmentDrawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
